@@ -4,7 +4,7 @@
 
 This is the project for the fourth course in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213): Concurrency. 
 
-Throughout the Concurrency course, you have been developing a traffic simulation in which vehicles are moving along streets and are crossing intersections. However, with increasing traffic in the city, traffic lights are needed for road safety. Each intersection will therefore be equipped with a traffic light. In this project, you will build a suitable and thread-safe communication protocol between vehicles and intersections to complete the simulation. Use your knowledge of concurrent programming (such as mutexes, locks and message queues) to implement the traffic lights and integrate them properly in the code base.
+Throughout the Concurrency course, I've been developing a traffic simulation in which vehicles move along streets and through intersections. All vehicles are simulated in separate threads and intersections are managed with monitor objects. The map is an image and coordinates for streets and interesections were provided in pixel co-ordinates. However, with increasing vehicles in the city, traffic lights were needed for road safety. Each intersection was therefore equipped with a traffic light. In this final project, I built a suitable and thread-safe communication protocol between vehicles and intersections to complete the simulation. I used my knowledge of concurrent programming (such as mutexes, locks and message queues) to implement the traffic lights and integrate them properly in the code base. Traffic light durations for each intersection are chosen randomly between 4 to 6 sec. 
 
 ## Dependencies for Running Locally
 * cmake >= 2.8
@@ -29,7 +29,9 @@ Throughout the Concurrency course, you have been developing a traffic simulation
 
 ## Project Tasks
 
-When the project is built initially, all traffic lights will be green. When you are finished with the project, your traffic simulation should run with red lights controlling traffic, just as in the .gif file above. See the classroom instruction and code comments for more details on each of these parts. 
+ Upon building & running the executable, traffic simulation should run with red lights controlling traffic, just as in the .gif file above. 
+
+Tasks that I completed in this final project are as follows:
 
 - **Task FP.1** : Define a class `TrafficLight` which is a child class of `TrafficObject`. The class shall have the public methods `void waitForGreen()` and `void simulate()` as well as `TrafficLightPhase getCurrentPhase()`, where `TrafficLightPhase` is an enum that can be either `red` or `green`. Also, add the private method `void cycleThroughPhases()`. Furthermore, there shall be the private member `_currentPhase` which can take `red` or `green` as its value.
 - **Task FP.2** : Implement the function with an infinite loop that measures the time between two loop cycles and toggles the current phase of the traffic light between red and green and sends an update method to the message queue using move semantics. The cycle duration should be a random value between 4 and 6 seconds. Also, the while-loop should use `std::this_thread::sleep_`for to wait 1ms between two cycles. Finally, the private method `cycleThroughPhases` should be started in a thread when the public method `simulate` is called. To do this, use the thread queue in the base class.
