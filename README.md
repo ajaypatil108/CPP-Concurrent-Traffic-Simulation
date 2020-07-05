@@ -4,7 +4,13 @@
 
 This is the project for the fourth course in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213): Concurrency. 
 
-Throughout the Concurrency course, I've been developing a traffic simulation in which vehicles move along streets and through intersections. All vehicles are simulated in separate threads and intersections are managed with monitor objects. The map is an image and coordinates for streets and interesections were provided in pixel co-ordinates. However, with increasing vehicles in the city, traffic lights were needed for road safety. Each intersection was therefore equipped with a traffic light. In this final project, I built a suitable and thread-safe communication protocol between vehicles and intersections to complete the simulation. I used my knowledge of concurrent programming (such as mutexes, locks and message queues) to implement the traffic lights and integrate them properly in the code base. Traffic light durations for each intersection are chosen randomly between 4 to 6 sec. 
+Throughout the Concurrency coursework, I've been developing a traffic simulation in which vehicles move along streets and through intersections. Map being an image, streets and intersection objects are built with pixel co-ordinates. This mapping of streets/intersections within an image was already provided in the source code. 
+
+I simulated all the vehicles (represented by dots) in separate threads. When a vehicle reaches end of the map, it turns back. Whereas if it enters an intersection which gives it choices of different streets to turn into, it randomly chooses another street to drive on.
+
+Furthermore, to avoid multiple vehicles entering the same intersection, I implemented traffic lights in the simulator. Each intersection is therefore equipped with a traffic light that cycles between red and green. The duration of a particular traffic light phase is randomly chosen from a range of 4 to 6 secs. This is implemented using a suitable and thread-safe communication protocol between vehicles and intersections. I used concurrent programming knowledge of mutexes, locks and message queues to incorporate traffic lights in the simulator. The video above shows the final running simulation! 
+
+Future work involves testing on a new location with more intersections & use car icons in place of dots for vehicles! 
 
 ## Dependencies for Running Locally
 * cmake >= 2.8
