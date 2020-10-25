@@ -10,7 +10,7 @@ I simulated all the vehicles (represented by dots) in separate threads. When a v
 
 Furthermore, to avoid multiple vehicles entering the same intersection, I implemented traffic lights in the simulator. Each intersection is therefore equipped with a traffic light that cycles between red and green. The duration of a particular traffic light phase is randomly chosen from a range of 4 to 6 secs. This is implemented using a suitable and thread-safe communication protocol between vehicles and intersections. I used concurrent programming knowledge of mutexes, locks and message queues to incorporate traffic lights in the simulator. The video above shows the final running simulation! 
 
-Future work involves testing on a new location with more intersections & use car icons in place of dots for vehicles! 
+Future work involves testing on a new location with more intersections & use of car icons in place of dots for vehicles! 
 
 ## Dependencies for Running Locally
 * cmake >= 2.8
